@@ -132,7 +132,7 @@ const RenderCards = ({repo, owner, description, created_at, language, open_issue
 const Repos = (props) => {
   const [bookmarkToggler, setBookmarkToggler] = useState(false);
 
-  let repoList = props.repos.slice(0, 10);
+  let repoList = props.repos;
 
   let bookmarkedRepos = JSON.parse(localStorage.getItem('repos')) ? JSON.parse(localStorage.getItem('repos')) : {};
 
