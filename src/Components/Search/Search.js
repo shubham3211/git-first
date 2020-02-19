@@ -45,9 +45,10 @@ const Search = ({searchRepos, bookmarkToggle}) => {
           <Grid item xs={10}>
             <form onSubmit={handleSubmit}>
               <Grid container>
-                <Grid item xs={12}>
-                  <Grid container>
-                    <Grid item xs={8}>
+
+                {/* <Grid item xs={12}>     
+                  <Grid container> */}
+                    <Grid item xs={12} md={8}>
                       <TextField 
                         label="Search..." 
                         variant="filled"
@@ -56,12 +57,13 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                         fullWidth
                       />
                     </Grid>
-                    <Grid item>
-                      <Box ml={1} mt={1}>
+                    <Grid item xs={10} md={2}>
+                      <Box ml={1} mt={1} order={2}>
                         <Button 
                           variant="contained"
                           size="large"
                           style={{backgroundColor:'#6c757d', color:'white'}}
+                          fullWidth
                           type="submit"
                         >
                           Explore
@@ -69,7 +71,7 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                       </Box>
                     </Grid>
                     <Grid item xs={2}>
-                      <Box ml={1} mt={1}>
+                      <Box ml={1} mt={1} order={2}>
                         <Button 
                           variant="contained" 
                           size="large"
@@ -80,12 +82,14 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                         </Button>
                       </Box>
                     </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={8}>
+                  {/* </Grid>
+                </Grid> */}
+
+                <Grid item xs={12} md={8}>
                   <Box mt={2}>
                     <Grid container spacing={2}>
-                      <Grid item sm={12} md={4}>
+
+                      <Grid item xs={12} md={4}>
                         <Typography gutterBottom>max stars:</Typography>
                         <Slider
                           ValueLabelComponent={ValueLabelComponent}
@@ -96,7 +100,7 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                           max={1000}
                         />
                       </Grid>
-                      <Grid item sm={12} md={4}>
+                      <Grid item xs={12} md={4}>
                         <Typography gutterBottom>languages:</Typography>
                         <NativeSelect
                           value={language}
@@ -107,7 +111,7 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                           {languages.map((ele, index)=><option key={index} value={ele.value}>{ele.label}</option>)}
                         </NativeSelect>
                       </Grid>
-                      <Grid item sm={12} md={4}>
+                      <Grid item xs={12} md={4}>
                         <Typography gutterBottom>Label:</Typography>
                         <NativeSelect
                           value={label}
@@ -118,9 +122,11 @@ const Search = ({searchRepos, bookmarkToggle}) => {
                           <option value="help-wanted-issue">Help Wanted Issue</option>
                         </NativeSelect>
                       </Grid>
+                      
                     </Grid>
                   </Box>
                 </Grid>
+
               </Grid>
             </form>
           </Grid>
